@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!" + "\n");
+        System.out.println("Hello, World!");
 
         //Задача № 1
         System.out.println("Задача № 1:");
