@@ -1,78 +1,110 @@
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("\n" + "Варианты ответов на Задачу 1" + "\n");
         //Задача 1
-        int age = 25;
-        if (age >= 18) {
-            System.out.println("Ты совершеннолетний." + "\n");
+        //Вариант if-else
+        char clientOS = '0';
+        if (clientOS == '0') {
+            System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
+        } else if (clientOS == '1') {
+            System.out.println("Установите версию приложения для Android по ссылке " + "\n");
         }
-        if (age < 18) {
-            System.out.println("Ты не достиг совершеннолетия, нужно немного подождать." + "\n");
+        //Вариант switch
+        int clientOS1 = '3';
+        switch (clientOS1) {
+            case '0':
+                System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
+                break;
+            case '1':
+                System.out.println("Установите версию приложения для Android по ссылке " + "\n");
+                break;
+            default:
+                System.out.println("Выберите версию устанавливаемого приложения." + "\n");
         }
 
+        System.out.println("\n" + "Задача 2" + "\n");
         //Задача 2
-        int temperature = 9;
-        if (temperature <= 5) {
-            System.out.println("На улице " + temperature + " градусов, нужно надеть шапку." + "\n");
-        }
-        if (temperature > 5) {
-            System.out.println("На улице " + temperature + " градусов, можно идти без шапки." + "\n");
+        int clientOS3 = 0;
+        int clientDeviceYear = 2014;
+        if (clientDeviceYear >= 2015 && clientOS3 == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
+        } else if (clientDeviceYear >= 2015 && clientOS3 == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке " + "\n");
+        } else if (clientDeviceYear < 2015 && clientOS3 == 0) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке " + "\n");
+        } else if (clientDeviceYear < 2015 && clientOS3 == 1) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке " + "\n");
         }
 
+        System.out.println("\n" + "Задача 3" + "\n");
         //Задача 3
-        int speed = 110;
-        if (speed <= 60) {
-            System.out.println("Ваша скорость " + speed + " км/час, можно ездить спокойно." + "\n");
-        }
-        if (speed > 60) {
-            System.out.println("Ваша скорость " + speed + " км/час, придется заплатить штраф." + "\n");
+        int year = 1583;
+        if (year >= 1584 && year % 4 == 0) {
+            System.out.println(year + " год является високосным." + "\n");
+        } else if (year >= 1584 && year % 400 == 0) {
+            System.out.println(year + " год является високосным." + "\n");
+        } else if (year >= 1584 && year % 100 != 0) {
+            System.out.println(year + " год не является високосным." + "\n");
+        } else if (year < 1584) {
+            System.out.println("В " + year + " году еще не было введено понятие високосного года." + "\n");
         }
 
+        System.out.println("\n" + "Задача 4" + "\n");
         //Задача 4
-        int years = 26;
-        if (years >= 2 && years < 6) {
-            System.out.println("Ваш возраст " + years + " года/лет, вам нужно ходить в детский сад." + "\n");
-        }
-        if (years >= 7 && years < 17) {
-            System.out.println("Ваш возраст " + years + " лет, вам нужно ходить в школу." + "\n");
-        }
-        if (years >= 18 && years <= 24) {
-            System.out.println("Ваш возраст " + years + " лет/год(а), вам нужно ходить в университет." + "\n");
-        }
-        if (years > 24) {
-            System.out.println("Ваш возраст " + years + " лет/год(а), вам пора ходить на работу." + "\n");
+        int deliveryDistance = 125;
+        int days = 1;
+        if (deliveryDistance >= 0 && deliveryDistance <= 20) {
+            System.out.println("Доставим карту через " + days + " день." + "\n");
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Доставим карту через " + (days + 1) + " дня." + "\n");
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Доставим карту через " + (days + 2) + " дня." + "\n");
+        } else {
+            System.out.println("К сожалению, при удаленности клиента, свыше 100 км, доставка карт не осуществляется." + "\n");
         }
 
+        System.out.println("\n" + "Задача 5" + "\n");
         //Задача 5
-        int yourAge = 14;
-        if (yourAge < 5) {
-            System.out.println("Ваш возраст " + yourAge + " года/лет, вам нельзя кататься на аттракционе." + "\n");
-        }
-        if (yourAge >= 5 && yourAge < 14) {
-            System.out.println("Ваш возраст " + yourAge + " лет/год(а), вам можно кататься на аттракционе в сопровождении взрослого." + "\n");
-        }
-        if (yourAge >= 14) {
-            System.out.println("Ваш возраст " + yourAge + " лет/год(а), вам можно кататься на аттракционе без сопровождения взрослого." + "\n");
-        }
-
-        //Задача 6
-        int carriageCapacity = 101, seatingCapacity = 65;
-        if (seatingCapacity > 0 && seatingCapacity < 60) {
-            System.out.println("В вагоне есть свободные сидячие места." + "\n");
-        } else if (seatingCapacity >= 60 && carriageCapacity < 102) {
-            System.out.println("В вагоне нет сидячих мест, но есть свободные стоячие места." + "\n");
-        } else if (carriageCapacity >= 102) {
-            System.out.println("В вагоне нет свободных мест." + "\n");
-        }
-
-        //Задача 7
-        int One = 10, Two = 65, Fhree = 25;
-        if (One > Two && One > Fhree) {
-            System.out.println(One + " является наибольшим числом." + "\n");
-        } else if (Two > One && Two > Fhree) {
-            System.out.println(Two + " является наибольшим числом." + "\n");
-        } else if (Fhree > One && Fhree > Two) {
-            System.out.println(Fhree + " является наибольшим числом." + "\n");
+        int monthNumber = 9;
+        switch (monthNumber) {
+            case 1:
+                System.out.println(monthNumber + " месяц (он же январь) принадлежит сезону зима." + "\n");
+                break;
+            case 2:
+                System.out.println(monthNumber + " месяц (он же февраль) принадлежит сезону зима." + "\n");
+                break;
+            case 3:
+                System.out.println(monthNumber + " месяц (он же март) относится к сезону весна." + "\n");
+                break;
+            case 4:
+                System.out.println(monthNumber + " месяц (он же апрель) относится к сезону весна." + "\n");
+                break;
+            case 5:
+                System.out.println(monthNumber + " месяц (он же май) относится к сезону весна." + "\n");
+                break;
+            case 6:
+                System.out.println(monthNumber + " месяц (он же июнь) относится к сезону лето." + "\n");
+                break;
+            case 7:
+                System.out.println(monthNumber + " месяц (он же июль) относится к сезону лето." + "\n");
+                break;
+            case 8:
+                System.out.println(monthNumber + " месяц (он же август) относится к сезону лето." + "\n");
+                break;
+            case 9:
+                System.out.println(monthNumber + " месяц (он же сентябрь) относится к сезону осень." + "\n");
+                break;
+            case 10:
+                System.out.println(monthNumber + " месяц (он же октябрь) относится к сезону осень." + "\n");
+                break;
+            case 11:
+                System.out.println(monthNumber + " месяц (он же ноябрь) относится к сезону осень." + "\n");
+                break;
+            case 12:
+                System.out.println(monthNumber + " месяц (он же декабрь) относится к сезону зима." + "\n");
+                break;
+            default:
+                System.out.println("Такого месяца не существует в природе." + "\n");
         }
     }
 }
