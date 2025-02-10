@@ -38,12 +38,12 @@ public class Main {
 
         System.out.println("\n" + "Задача 3" + "\n");
         //Задача 3
-        int year = 1583;
-        if (year >= 1584 && year % 4 == 0) {
+        int year = 2300;
+        if (year >= 1584 && year % 400 == 0) {
             System.out.println(year + " год является високосным." + "\n");
-        } else if (year >= 1584 && year % 400 == 0) {
+        } else if (year >= 1584 && year % 100 != 0 && year % 400 != 0) {
             System.out.println(year + " год является високосным." + "\n");
-        } else if (year >= 1584 && year % 100 != 0) {
+        } else if (year >= 1584 && year % 4 == 0) {
             System.out.println(year + " год не является високосным." + "\n");
         } else if (year < 1584) {
             System.out.println("В " + year + " году еще не было введено понятие високосного года." + "\n");
