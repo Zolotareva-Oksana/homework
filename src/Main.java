@@ -35,18 +35,22 @@ public class Main {
         } else if (clientDeviceYear < 2015 && clientOS3 == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке " + "\n");
         }
+        //Ч/з тенарный оператор (не учтен год создания систем! - 2007)
+        int clientOS4 = 1;
+        int clientDeviceYear1 = 2003;
+        String osType = (clientOS4 == 0 ? "iOS" : "Android");
+        String version = (clientDeviceYear1 >= 2015 ? "" : "облегченную ");
+        System.out.println("Установите " + version + "версию приложения для " + osType + " по ссылке\n");
 
         System.out.println("\n" + "Задача 3" + "\n");
         //Задача 3
         int year = 2300;
-        if (year >= 1584 && year % 400 == 0) {
-            System.out.println(year + " год является високосным." + "\n");
-        } else if (year >= 1584 && year % 100 != 0 && year % 400 != 0) {
-            System.out.println(year + " год является високосным." + "\n");
-        } else if (year >= 1584 && year % 4 == 0) {
-            System.out.println(year + " год не является високосным." + "\n");
-        } else if (year < 1584) {
-            System.out.println("В " + year + " году еще не было введено понятие високосного года." + "\n");
+        if (year < 1584) {
+            System.out.println("В " + year + " году еще не было введено понятие високосного года.");
+        } else if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            System.out.println(year + " год является високосным.");
+        } else {
+            System.out.println(year + " год не является високосным.");
         }
 
         System.out.println("\n" + "Задача 4" + "\n");
