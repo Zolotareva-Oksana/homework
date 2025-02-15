@@ -1,114 +1,69 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\n" + "Варианты ответов на Задачу 1" + "\n");
-        //Задача 1
-        //Вариант if-else
-        char clientOS = '0';
-        if (clientOS == '0') {
-            System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
-        } else if (clientOS == '1') {
-            System.out.println("Установите версию приложения для Android по ссылке " + "\n");
-        }
-        //Вариант switch
-        int clientOS1 = '3';
-        switch (clientOS1) {
-            case '0':
-                System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
-                break;
-            case '1':
-                System.out.println("Установите версию приложения для Android по ссылке " + "\n");
-                break;
-            default:
-                System.out.println("Выберите версию устанавливаемого приложения." + "\n");
+
+        System.out.println("Задача 1");
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(i);
         }
 
-        System.out.println("\n" + "Задача 2" + "\n");
-        //Задача 2
-        int clientOS3 = 0;
-        int clientDeviceYear = 2014;
-        if (clientDeviceYear >= 2015 && clientOS3 == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке " + "\n");
-        } else if (clientDeviceYear >= 2015 && clientOS3 == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке " + "\n");
-        } else if (clientDeviceYear < 2015 && clientOS3 == 0) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке " + "\n");
-        } else if (clientDeviceYear < 2015 && clientOS3 == 1) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке " + "\n");
-        }
-        //Ч/з тенарный оператор (не учтен год создания систем! - 2007)
-        int clientOS4 = 1;
-        int clientDeviceYear1 = 2003;
-        String osType = (clientOS4 == 0 ? "iOS" : "Android");
-        String version = (clientDeviceYear1 >= 2015 ? "" : "облегченную ");
-        System.out.println("Установите " + version + "версию приложения для " + osType + " по ссылке\n");
-
-        System.out.println("\n" + "Задача 3" + "\n");
-        //Задача 3
-        int year = 2300;
-        if (year < 1584) {
-            System.out.println("В " + year + " году еще не было введено понятие високосного года.");
-        } else if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-            System.out.println(year + " год является високосным.");
-        } else {
-            System.out.println(year + " год не является високосным.");
+        System.out.println("\n");
+        System.out.println("Задача 2");
+        for (int i = 10; i >= 1; i = i - 1) {
+            System.out.println(i);
         }
 
-        System.out.println("\n" + "Задача 4" + "\n");
-        //Задача 4
-        int deliveryDistance = 125;
-        int days = 1;
-        if (deliveryDistance >= 0 && deliveryDistance <= 20) {
-            System.out.println("Доставим карту через " + days + " день." + "\n");
-        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Доставим карту через " + (days + 1) + " дня." + "\n");
-        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Доставим карту через " + (days + 2) + " дня." + "\n");
-        } else {
-            System.out.println("К сожалению, при удаленности клиента, свыше 100 км, доставка карт не осуществляется." + "\n");
+        System.out.println("\n");
+        System.out.println("Задача 3");
+        for (int i = 2; i <= 17; i = i + 2) {
+            System.out.println(i);
         }
 
-        System.out.println("\n" + "Задача 5" + "\n");
-        //Задача 5
-        int monthNumber = 9;
-        switch (monthNumber) {
-            case 1:
-                System.out.println(monthNumber + " месяц (он же январь) принадлежит сезону зима." + "\n");
-                break;
-            case 2:
-                System.out.println(monthNumber + " месяц (он же февраль) принадлежит сезону зима." + "\n");
-                break;
-            case 3:
-                System.out.println(monthNumber + " месяц (он же март) относится к сезону весна." + "\n");
-                break;
-            case 4:
-                System.out.println(monthNumber + " месяц (он же апрель) относится к сезону весна." + "\n");
-                break;
-            case 5:
-                System.out.println(monthNumber + " месяц (он же май) относится к сезону весна." + "\n");
-                break;
-            case 6:
-                System.out.println(monthNumber + " месяц (он же июнь) относится к сезону лето." + "\n");
-                break;
-            case 7:
-                System.out.println(monthNumber + " месяц (он же июль) относится к сезону лето." + "\n");
-                break;
-            case 8:
-                System.out.println(monthNumber + " месяц (он же август) относится к сезону лето." + "\n");
-                break;
-            case 9:
-                System.out.println(monthNumber + " месяц (он же сентябрь) относится к сезону осень." + "\n");
-                break;
-            case 10:
-                System.out.println(monthNumber + " месяц (он же октябрь) относится к сезону осень." + "\n");
-                break;
-            case 11:
-                System.out.println(monthNumber + " месяц (он же ноябрь) относится к сезону осень." + "\n");
-                break;
-            case 12:
-                System.out.println(monthNumber + " месяц (он же декабрь) относится к сезону зима." + "\n");
-                break;
-            default:
-                System.out.println("Такого месяца не существует в природе." + "\n");
+        System.out.println("\n");
+        System.out.println("Задача 4");
+        for (int i = 10; i >= -10; i = i - 1) {
+            System.out.println(i);
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 5");
+        for (int i = 1904; i % 100 != 0 || i <= 2096; i = i + 4) {
+            System.out.println(i + " год является високосным.");
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 6");
+        for (int i = 7; i <= 98; i = i + 7) {
+            System.out.println(i);
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 7");
+        for (int i = 2; i <= 512; i = i * 2) {
+            System.out.println(i);
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 8");
+        int savings = 0;
+        for (int i = 1; i <= 12; i++) {
+            savings += 29000;
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + savings + " рублей.");
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 9");
+        double savings1 = 29000;
+        for (int i = 1; i <= 12; i++) {
+            savings1 += savings1 * 0.012;
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + savings1 + " рублей.");
+        }
+
+        System.out.println("\n");
+        System.out.println("Задача 10");
+        int b;
+        for (int i = 1; i <= 10; i++) {
+            b = 2 * i;
+            System.out.println("2*" + i + "=" + b);
         }
     }
 }
