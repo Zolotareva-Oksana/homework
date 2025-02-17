@@ -8,9 +8,7 @@ public class Main {
         while (savings <= 2_459_000) {
             savings = savings + income;
             i++;
-            if (i % 12 == 0) {
-                System.out.println("Месяц " + i + ", сумма накоплений равна " + savings + " рублей.");
-            }
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + savings + " рублей.");
         }
 
         System.out.println("\n");
@@ -46,10 +44,9 @@ public class Main {
         while (totalSavings < 12_000_000) {
             totalSavings = totalSavings + deposit;
             month++;
-            if (month % 48 == 0) {
-                System.out.println("Василию потребуется " + month + " месяца(ев), чтобы накопить " + totalSavings + " руб.");
-            }
+            System.out.println("Василию потребуется " + month + " месяца(ев), чтобы накопить " + totalSavings + " руб.");
         }
+
 
         System.out.println("\n");
         System.out.println("Задача 5");
