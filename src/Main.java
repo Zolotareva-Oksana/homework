@@ -1,93 +1,62 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задача 1");
-        double income = 15000;
-        double savings = 0;
-        int i = 0;
-        while (savings <= 2_459_000) {
-            savings = savings + income;
-            i++;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + savings + " рублей.");
-        }
+        int[] intArray = new int[3];
+        intArray[0] = 1;
+        intArray[1] = 2;
+        intArray[2] = 3;
+
+        double[] doobleArray = new double[3];
+        doobleArray[0] = 1.57;
+        doobleArray[1] = 7.654;
+        doobleArray[2] = 9.986;
+
+        char[] charArray = new char[3];
+        charArray[0] = 'D';
+        charArray[1] = 'O';
+        charArray[2] = 'G';
+        System.out.println("Создано 3 массива: int, dooble и char. Во 2 задаче будет представлен вывод массивов.");
 
         System.out.println("\n");
         System.out.println("Задача 2");
-        int number = 0;
-        while (number <= 9) {
-            number++;
-            System.out.print(number + " ");
-        }
-        System.out.println();
-        for (int number1 = 10; number1 > 0; number1 = number1 - 1) {
-            System.out.print(number1 + " ");
+        {
+            System.out.println(Arrays.toString(intArray));
+            System.out.println(Arrays.toString(doobleArray));
+            System.out.println(Arrays.toString(charArray));
         }
 
         System.out.println("\n");
         System.out.println("Задача 3");
-        int year = 0;
-        long populationSize = 12_000_000L;
-        double birthRate = populationSize * 0.017;
-        double mortalityRate = populationSize * 0.008;
-        long populationChange = (long) (birthRate - mortalityRate);
-        while (year <= 9) {
-            year++;
-            populationSize += populationChange;
-            System.out.println("Год " + year + ", численность населения составляет " + populationSize + " чел.");
+        for (int i = 3 - 1; i >= 0; i--) {
+            System.out.print(intArray[i]);
+            if (i != 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        for (int i = 3 - 1; i >= 0; i--) {
+            System.out.print(doobleArray[i]);
+            if (i != 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        for (int i = 3 - 1; i >= 0; i--) {
+            System.out.print(charArray[i]);
+            if (i != 0) {
+                System.out.print(", ");
+            }
         }
 
         System.out.println("\n");
         System.out.println("Задача 4");
-        long deposit = 15_000;
-        long totalSavings = deposit + (long) (deposit * 0.07);
-        int month = 0;
-        while (totalSavings < 12_000_000) {
-            totalSavings = totalSavings + deposit;
-            month++;
-            System.out.println("Василию потребуется " + month + " месяца(ев), чтобы накопить " + totalSavings + " руб.");
-        }
-
-
-        System.out.println("\n");
-        System.out.println("Задача 5");
-        long deposit1 = 15_000;
-        long totalSavings1 = deposit + (long) (deposit * 0.07);
-        int month1 = 0;
-        while (totalSavings1 < 12_000_000) {
-            totalSavings1 = totalSavings1 + deposit1;
-            month1++;
-            if (month1 % 6 == 0) {
-                System.out.println("Василию потребуется " + month1 + " месяца(ев), чтобы накопить " + totalSavings1 + " руб.");
-            }
-        }
-
-        System.out.println("\n");
-        System.out.println("Задача 6");
-        long deposit2 = 15_000;
-        long totalSavings2 = deposit2 + (long) (deposit2 * 0.07);
-        int month2 = 0;
-        while (month2 <= 108) {
-            month2++;
-            totalSavings2 = totalSavings2 + deposit2;
-            if (month2 % 6 == 0) {
-                System.out.println("Василий за " + month2 + " месяца(ев), накопит " + totalSavings2 + " руб.");
-            }
-        }
-
-        System.out.println("\n");
-        System.out.println("Задача 7");
-        int firstFriday = 3;
-        for (int day = firstFriday; day <= 31; day += 7) {
-            System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
-        }
-
-        System.out.println("\n");
-        System.out.println("Задача 8");
-        int currentYear = 2025;
-        int beginning = currentYear - 200;
-        int end = currentYear + 100;
-        for (int yearFlight = beginning; yearFlight <= end; yearFlight+=79) {
-            System.out.println(yearFlight);
+        for (int i = 0; i <= 2; i++) {
+            if (intArray[i] % 2 != 0)
+                intArray[i]++;
+            System.out.println(intArray[i]);
         }
     }
 }
