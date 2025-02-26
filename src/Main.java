@@ -4,59 +4,47 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Задача 1");
-        int[] intArray = new int[3];
-        intArray[0] = 1;
-        intArray[1] = 2;
-        intArray[2] = 3;
-
-        double[] doobleArray = new double[3];
-        doobleArray[0] = 1.57;
-        doobleArray[1] = 7.654;
-        doobleArray[2] = 9.986;
-
-        char[] charArray = new char[3];
-        charArray[0] = 'D';
-        charArray[1] = 'O';
-        charArray[2] = 'G';
-        System.out.println("Создано 3 массива: int, dooble и char. Во 2 задаче будет представлен вывод массивов.");
+        int[] payments = {157, 765, 998, 1306, 2021};
+        int sum = 0;
+        for (int element : payments) {
+            sum += element;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
 
         System.out.println("\n");
         System.out.println("Задача 2");
-        {
-            System.out.println(Arrays.toString(intArray));
-            System.out.println(Arrays.toString(doobleArray));
-            System.out.println(Arrays.toString(charArray));
+        int[] payments2 = Arrays.copyOf(payments, payments.length);
+        int maximumWaste = payments2[0];
+        int minimumWaste = payments2[0];
+        for (int i = 1; i < payments2.length; i++) {
+            int desiredExpense = payments2[i];
+            if (desiredExpense > maximumWaste) {
+                maximumWaste = desiredExpense;
+            }
+            if (desiredExpense < minimumWaste) {
+                minimumWaste = desiredExpense;
+            }
         }
+        System.out.println("Минимальная сумма трат за неделю составила " + minimumWaste + " рублей. Максимальная сумма трат за неделю составила " + maximumWaste + " рублей.");
 
         System.out.println("\n");
         System.out.println("Задача 3");
-        for (int i = 3 - 1; i >= 0; i--) {
-            System.out.print(intArray[i]);
-            if (i != 0) {
-                System.out.print(", ");
-            }
+        int[] payments3 = Arrays.copyOf(payments, payments.length);
+        int sum3 = 0;
+        for (int element3 : payments3) {
+            sum3 += element3;
         }
-        System.out.println();
-        for (int i = 3 - 1; i >= 0; i--) {
-            System.out.print(doobleArray[i]);
-            if (i != 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
-        for (int i = 3 - 1; i >= 0; i--) {
-            System.out.print(charArray[i]);
-            if (i != 0) {
-                System.out.print(", ");
-            }
-        }
+        double averageExpense = (double) sum3 / payments3.length;
+        System.out.println("Средняя сумма трат за месяц составила " + averageExpense + " рублей.");
 
         System.out.println("\n");
         System.out.println("Задача 4");
-        for (int i = 0; i <= 2; i++) {
-            if (intArray[i] % 2 != 0)
-                intArray[i]++;
-            System.out.println(intArray[i]);
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            int archive = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = (char) archive;
         }
+        System.out.println(Arrays.toString(reverseFullName));
     }
 }
