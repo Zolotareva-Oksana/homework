@@ -1,7 +1,7 @@
 public class Book {
-String title;
-Author author;
-int yearPublication;
+private String title;
+private Author author;
+private int yearPublication;
 // создаем свойства книги
 
     public Book(String title, Author author, int yearPublication) {

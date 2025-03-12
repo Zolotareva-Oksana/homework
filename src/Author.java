@@ -1,7 +1,7 @@
 public class Author {
-    private String surname;
-    private String name;
-    private String patronymic;
+    private final String surname;
+    private final String name;
+    private final String patronymic;
     //задаем переменные полного имени автора
 
     public Author(String surname, String name, String patronymic) {
