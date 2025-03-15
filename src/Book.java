@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book {
 private String title;
 private Author author;
@@ -31,10 +33,21 @@ private int yearPublication;
         // открываем возможность поменять год издания книги
     }
 
-    public void fullInformationBook() {
-        System.out.println("Название: " + title);
-        System.out.println("Автор: " + author.fullNameAuthor());
-        System.out.println("Год публикации: " + yearPublication);
-        // метод вывода полной информации о книге
+    @Override
+    public String toString() {
+        return String.format("Название: %s. Автор: %s. Год публикации: %d.",
+                title, author.toString(), yearPublication);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return yearPublication == book.yearPublication && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, yearPublication);
     }
 }
