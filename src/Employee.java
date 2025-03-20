@@ -1,91 +1,61 @@
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Employee {
-    private String surname;
-    private String name;
-    private String patronymic;
-    //ФИО сотрудника
-    private String department;
-    private static final String[] DEPARTMENTS_NAMES = {"1 отдел", "2 отдел", "3 отдел", "4 отдел", "5 отдел"};
-    //отделы
-    private double employeeSalary;
-    //зарплата сотрудника
-    private final int id;
     private static int counter = 1;
-    public Employee() {
-        this.id = counter++;
-    }
-    //счетчик
 
-    public String getSurname() {
-        return surname;
-    }
+    private final String fullName;
+    private String department;
+    private double salary;
+    private final int  id;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getPatronymic() {
-        return patronymic;
+    public Employee(String fullName, String department, double salary) {
+        id = counter++;
+        this.fullName = fullName;
+        this.department = department;
+        this.salary = salary;
     }
 
-    public int getId() {
-        return id;
+    public String getFullName() {
+        return fullName;
     }
 
     public String getDepartment() {
         return department;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public void setDepartment(String department) {
         this.department = department;
     }
 
-    public double getEmployeeSalary() {
-        return employeeSalary;
-    }
-
-    public void setEmployeeSalary(double employeeSalary) {
-        this.employeeSalary = employeeSalary;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Double.compare(employeeSalary, employee.employeeSalary) == 0 && id == employee.id && Objects.equals(surname, employee.surname) && Objects.equals(name, employee.name) && Objects.equals(patronymic, employee.patronymic) && Objects.equals(department, employee.department);
+        return Double.compare(salary, employee.salary) == 0 && id == employee.id && Objects.equals(fullName, employee.fullName) && Objects.equals(department, employee.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(surname, name, patronymic, department, employeeSalary, id);
-    }
-
-    public Employee(String surname, String name, String patronymic, String department, double employeeSalary) {
-        this.surname = surname;
-        this.name = name;
-        this.patronymic = patronymic;
-        this.department = department;
-        this.employeeSalary = employeeSalary;
-        this.id = counter++;
+        return Objects.hash(fullName, department, salary, id);
     }
 
     @Override
     public String toString() {
-        return "Сотрудник " + id + ". " +
-                surname + " " +
-                name + " " +
-                patronymic + ", " +
-                "работает в(о) " + department + "е, " +
-                "ежемесячная заработная плата составляет: " + employeeSalary + " руб.";
-    }
-
-    public static String[] getDepartmentsNames() {
-        return DEPARTMENTS_NAMES;
-    }
-
-    public String getFullName() {
-        return surname + " " + name + " " + patronymic;
+        return "Сотрудник: " + id + ". "
+                + fullName +
+                ", структура: " + department +
+                ", заработная плата: " + salary;
     }
 }
