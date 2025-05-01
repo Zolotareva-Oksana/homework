@@ -1,21 +1,34 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
-import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.DiscountedProduct;
+import org.skypro.skyshop.product.FixPriceProduct;
+import org.skypro.skyshop.product.SimpleProduct;
 
 public class App {
     public static void main(String[] args) {
-        Product apple = new Product("Яблоки", 50);
-        Product orange = new Product("Апельсины", 90);
-        Product watermelon = new Product("Арбуз", 75);
-        Product melon = new Product("Дыня", 80);
-        Product strawberry = new Product("Клубника", 110);
-        Product raspberry = new Product("Малина", 120);
-        Product blueberries = new Product("Черника", 150);
+        SimpleProduct apple = new SimpleProduct("Яблоки", 50);
+        SimpleProduct orange = new SimpleProduct("Апельсины", 90);
+        SimpleProduct watermelon = new SimpleProduct("Арбуз", 75);
+        SimpleProduct melon = new SimpleProduct("Дыня", 80);
+        SimpleProduct strawberry = new SimpleProduct("Клубника", 110);
+        SimpleProduct raspberry = new SimpleProduct("Малина", 120);
+        SimpleProduct blueberries = new SimpleProduct("Черника", 150);
+
+        DiscountedProduct nutMixture = new DiscountedProduct("Смесь орехов", 100, 20);
+        DiscountedProduct yogurt = new DiscountedProduct("Йогурт", 80, 15);
+
+        FixPriceProduct spoonDisposable = new FixPriceProduct("Ложка одноразовая");
+        FixPriceProduct plugDisposable = new FixPriceProduct("Вилка одноразовая");
+        FixPriceProduct paperСup = new FixPriceProduct("Стакан бумажный");
+        FixPriceProduct paperPlate = new FixPriceProduct("Тарелка бумажная");
 
         System.out.println();
         ProductBasket basket = new ProductBasket();
         basket.addProductBasket(apple);
+        basket.addProductBasket(nutMixture);
+        basket.addProductBasket(yogurt);
+        basket.addProductBasket(paperPlate);
         basket.printBasket();
         System.out.println();
 
@@ -38,6 +51,10 @@ public class App {
         ProductBasket basket3 = new ProductBasket();
         basket3.addProductBasket(blueberries);
         basket3.addProductBasket(watermelon);
+        basket3.addProductBasket(spoonDisposable);
+        basket3.addProductBasket(plugDisposable);
+        basket3.addProductBasket(paperСup);
+        basket3.addProductBasket(paperPlate);
         basket3.addProductBasket(blueberries);
         basket3.addProductBasket(blueberries);
         System.out.println("Общая стоимость корзины составила: " + basket3.totalCostBasket() + " руб.");
