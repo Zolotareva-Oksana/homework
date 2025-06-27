@@ -1,9 +1,9 @@
 package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
-import org.skypro.skyshop.product.DiscountedProduct;
-import org.skypro.skyshop.product.FixPriceProduct;
-import org.skypro.skyshop.product.SimpleProduct;
+import org.skypro.skyshop.product.*;
+
+import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
@@ -91,5 +91,40 @@ public class App {
         } else {
             System.out.println("Продукт не найден!");
         }
+
+        System.out.println();
+
+        SearchEngine searchEngine = new SearchEngine(20);
+
+        searchEngine.add(apple);
+        searchEngine.add(orange);
+        searchEngine.add(watermelon);
+        searchEngine.add(melon);
+        searchEngine.add(strawberry);
+        searchEngine.add(raspberry);
+        searchEngine.add(blueberries);
+        searchEngine.add(nutMixture);
+        searchEngine.add(yogurt);
+        searchEngine.add(spoonDisposable);
+        searchEngine.add(plugDisposable);
+        searchEngine.add(paperСup);
+        searchEngine.add(paperPlate);
+
+        Article article1 = new Article("ЯБЛОКИ", "Яблоки содержат железо.");
+        Article article2 = new Article("ЧЕРНИКА", "Цвет черники синий.");
+        Article article3 = new Article("СТАКАН БУМАЖНЫЙ", "Бумажный стакан в дороге незаменимая вещь.");
+
+        searchEngine.add(article1);
+        searchEngine.add(article2);
+        searchEngine.add(article3);
+
+        Searchable[] searched1 = searchEngine.search("Яблоки");
+        Searchable[] searched2 = searchEngine.search("Стакан бумажный");
+        Searchable[] searched3 = searchEngine.search("Цвет черники синий");
+
+
+        System.out.println(Arrays.toString(searched1));
+        System.out.println(Arrays.toString(searched2));
+        System.out.println(Arrays.toString(searched3));
     }
 }

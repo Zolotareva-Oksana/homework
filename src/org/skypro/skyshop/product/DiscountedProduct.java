@@ -24,4 +24,5 @@ public class DiscountedProduct extends Product {
     public String toString() {
         return getName() + ": " + basePrice + " руб." + " (-" + discountPercentage + " %).";
     }
+
 }
